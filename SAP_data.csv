@@ -1,0 +1,17 @@
+Date,Incident ID,Assigned To,Incident Description,Proposed Fix,Status,Reopened,Aging,Priority
+10/10/2010,INC001,Amit ,I am not able to login to my system.,Login page ,Closed,No,220,P2
+10/11/2010,INC002,,How to reset the password?,Password reset page,Closed,No,220,P3
+10/12/2010,INC003,,What is my login ID?,login ID page,Closed,No,220,P2
+10/13/2010,INC004,,How do I create new user?,Create user/Subscription page,Closed,No,220,P1
+,INC005,,Where can I check which email I used for subscription,Email settings page,,,,
+,INC006,,How can I subscribe to this application?,Subscription page,,,,
+,INC007,,How To renew the subscription?,Subscription renewal page,,,,
+10/14/2010,INC008,,How many users are supported per subscription?,Per subscription limit for users,Closed,No,220,P3
+10/15/2010,INC009,,How many devices are supported per subscription?,Per subscription limit for devices,Closed,No,220,P3
+10/16/2010,INC010,,Can same subscription work in different geographical locations?,Supported regions,Closed,No,220,P3
+10/17/2010,INC011,,What devices the application supports?,"Environment details: The application is supported on IOS (2.0, 5.3,6.4, 9.1)and Androids(10.1,10.2,13.5,13.6,15.1)",Closed,No,220,P3
+10/18/2010,INC012,,How can I upgrade my plan to premium?,Subscription plans page,Closed,No,220,P4
+10/19/2010,INC013,,Can I change the plan I am using currently?,Subscription plans page,Closed,No,220,P5
+,INC014,,"The application is not loading, though I have internet connection.",Troubleshoot page,Closed,No,,
+,INC015,,What are the current offers?,Offer page,Closed,No,,
+,INC016,,How to revoke access?,Subcription revoke page,Closed,No,,
