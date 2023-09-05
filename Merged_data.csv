@@ -1,4 +1,4 @@
-Date,Incident ID,Assigned To,Incident Description,Proposed Fix,Status,Reopened,Aging,Priority
+Date,Ticket Number,Assigned To,Incident Description,Proposed Fix,Status,Reopened,Aging,Priority
 10/10/2010,INC001,Amit ,I am not able to login to my  system.,Login page ,Closed,No,220,P2
 10/11/2010,INC002,,How to reset the password?,Password reset page,Closed,No,220,P3
 10/12/2010,INC003,,What is my  login ID?,login ID page,Closed,No,220,P2
