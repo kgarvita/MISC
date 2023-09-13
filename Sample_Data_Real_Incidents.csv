@@ -1,0 +1,218 @@
+Ticket#,Component,Subject,Description,Priority,State,Reported On,Resolution
+INC0001,SAP_ECC_BW,SAP on Linux Suse -vs- Oracle Linux -vs- Linux Red Hat,"We are planning on replatforming our ECC and BW SAP environments based on some version of Linux. We are running Oracle on the backend.
+
+I am curious if anyone out there would know why we might use Linux Suse over Oracle Linux and vice-versa. Is there a technical argument to be made for using Linux Red Hat above all else?
+
+Are the technical advantages for one over the other? Are more SAP shops using one more than the other?",3-Medium,Resolved,Jun-06-2021,"I’m referring to the aspect of FC where the storage array vendor will have a simple list of supported attached operating systems--this will probably include at least Red Hat and Suse nowadays--and then a more detailed matrix listing operating system, attached server vendor, model and FC adapter model, etc. and then the server hardware vendor will also have a list of supported storage arrays and then a more detailed matrix for the same things OS, server, HBA. Getting your combination to appear in both the storage and server vendors matrix may be most likely with Red Hat, followed by Suse and Oracle Linux."
+INC0002,SAP_ECC,Linux Redhat or SUSE,"Could anyone tell me what are the diffences between running SAP ECC on Linux Redhat or SUSE?
+
+are there any pros/cons about running one or another?
+
+Same doubt for S4HANA",3-Medium,Resolved,Jul-15-2019,"I am happy to provide some input and newer information. Most SUSE vs. RHEL related information is outdated (<2018) as a lot of new features, products and additions had been added since then by Red Hat.
+
+A good summary of supported and certified versions is: https://wiki.scn.sap.com/wiki/display/ATopics/Technical+Resources+for+SAP+HANA+and+Data+Hub+on+Red+Hat
+
+Apart form Linux, there are additonal supported or certified products to virtualize, to integrate with and to run e.g. SAP Business Apps. It's also a lot of Automation for initial Deployments as well as Day2 operations. Most is done through Ansible.
+
+Compared to SLES, Red Hat Linux (RHEL) for SAP Solutions subscriptions include supported Ansible roles, as well as smart Management, HA etc. This works cloud agnostic in cloud and on prem. Red Hat is adding more Day2 Automation support into their products.
+
+See https://redhat-sap.github.io/sap-workshops/#/ for some good examples of Automation. Also, there is a SAP Linux Lab initiative on that topics: https://sap-linuxlab.github.io/
+
+If you would like to get a detailed technical overview of the current RHEL releases 8 and 9, look here:
+https://access.redhat.com/solutions/3082481
+
+RHEL is certified to run SAP in all major hyperscalers, private cloud and on prem on x86 and IBM Power. For IBM Cloud, RHEL is the exclusive option."
+INC0003,SAP_LINUX,Oracle 10g R2 on Oracle Enterprise Linux 5.x,Is Oracle Enterprise Linux 5.x supported as OS for Oracle when it comes to SAP?? It is RedHat Enterprise Linux 5.x with a 6 month delay over Oracle for Major release changes…,3-Medium,Resolved,Jul-15-2019,LINUX REDHAT EL5 is supported with oracle 10g (At least Oracle patchset 10.2.0.2 required.)
+INC0004,SAP_ECC,Linux upgradation,"I installed ecc5.0 on Red Hat Linux AS 4 with oracle 9.2.0.6.0 platform now i am planning to upgrade to Oracle Enterprise Linux AS 5,is that possible ?,",2- High,In-Progress,Apr-20-2022,
+INC0005,SAP_LINUX,Upgrade SAP,"we are planning to upgrade OS suse from suse 11 sp4 for machine power ppc64le big endian to suse 15 sp4 for machine power ppc64le little endian...
+our SAP is :
+
+EHP7 for SAP ERP 6.0
+
+there is possible or not ?",2- High,Resolved,Apr-25-2022,"please refer to SUSE upgrade guide:
+
+https://documentation.suse.com/sles/15-SP4/html/SLES-all/cha-upgrade-paths.html
+
+Cross-architecture upgrades, such as upgrading from a 32-bit version of SUSE Linux Enterprise Server to the 64-bit version, or upgrading from big endian to little endian are not supported!
+
+Specifically, SLE 11 on POWER (big endian) to SLE 15 SP4 on POWER (new: little endian!) is not supported.
+
+Also, since SUSE Linux Enterprise 15 is 64-bit only, upgrades from any 32-bit SUSE Linux Enterprise 11 systems to SUSE Linux Enterprise 15 and later are not supported.
+
+To make a cross-architecture upgrade, you need to perform a new installation."
+INC0006,SAP_S4HANA,Upgrading to SLES15 versus fresh installation,"we operate the SAP systems for some companies.
+
+Some of our customers are currently running S/4HANA 1909 on ppc64le with SLES12.
+
+You know it is a prerequisite to have SLES15 installed when you want to upgrade to S/4HANA 2021.
+
+We are now having discussions what is the best way to get to SLES15.
+
+Should the os-guys do a fresh installation or should they perform an inplace upgrade from SLES12 to SLES15?
+
+SAP provides a SAP note ...
+
+2578899 - SUSE Linux Enterprise Server 15: Installation Note
+
+with section ..
+
+Upgrading SUSE Linux Enterprise Server 15
+
+stating that an upgrade is supported:
+
+For upgrading SUSE Linux Enterprise Server see the Upgrade Guide for your targeted Service Pack: https://documentation.suse.com/
+
+The document includes the upgrade form SLES 12 to SLES 15 as well as upgrading from one Service Pack to another.
+
+But on the other hand, following the link to SUSE documentation ...
+
+https://documentation.suse.com/sles/15-SP3/html/SLES-all/cha-upgrade-paths.html#sec-upgrade-vs-fresh-install
+
+it is stated that SUSE recommends fresh installation in most scenarios.
+
+There is the following section in the upgrade guide:
+
+1.1 Upgrading versus fresh installation Report Documentation Bug #Edit source
+
+Upgrades between two major releases of SUSE Linux Enterprise Server are supported by SUSE.
+
+Whether it is better to upgrade or perform a fresh installation depends on your specific scenario.
+
+While upgrades involve less work, fresh installations ensure you benefit from all the new features of a release such as disk layout changes,
+
+specific filesystem features, and other improvements.
+
+To get the most out of your system, SUSE therefore recommends fresh installations in most scenarios.
+
+Are the features which are mentioned (disk layout changes, specific filesystem features, and other improvements) used by SAP so that it would make sense to do a fresh installation?
+
+As a SAP basis guy I personally would prefer an inplace upgrade if there is not anything against it.
+
+Are there any concerns?
+
+What is your recommendation?
+
+Do you maybe have already successfully upgraded SLES12 to SLES15?",3-Medium,Resolved,Apr-25-2022,"How about taking a VM snapshot (non-prd first), doing an in-place upgrade, see how it works. If not successful, roll back to the snapshot and do a fresh installation later.
+
+How about booting from PXE, then you can decide what you boot at boot time?
+
+How about using a boot disk, exchanging it to SLES15? This way you can do the switch in almost zero time.
+
+I agree with starting to test on a snapshot or backup of an existing SLES12 LPAR in non-prod.
+
+It is my opinion that an in-place upgrade is a good approach if your OS admins do not plan to make any changes to the partitioning layout and sizes or filesystem types used for the OS.
+
+I would consider disabling any automatic starting of HANA, unmounting the HANA filesystems and commenting the automatic mounting of the HANA filesytems during reboot. Temporarily disabling these will get them out of the way of reboots during the offline OS upgrade.
+
+Be sure to understand the supported upgrade paths to 15 SP3 because your post did not mention what SLES 12 SP level you are currently at. Follow all of the steps in the offline upgrade including the post-upgrade checks.
+
+I would manually do the first LPAR but consider looking at automation tools if you have many LPARs to upgrade. SUSE has a very good tool for centralized Linux systems management."
+INC0007,SAP_LINUX,How to uninstall server components from linux OS,Please guide me to uninstall Server components from linux os. I want to update server components from version 9 to version 10. Or else give me the ideas to update.,3-Medium,Resolved,Apr-27-2022,"First of all, you should think about some considerations. First, the SLES upgrade!
+
+SAP B1 9.3 operates on the SAP HANA Platform 1.0 version, which is compatible with, at most, SLES version 12 SP 4.
+
+While SAP B1 10.0 works with the SAP HANA Platform 2.0 version, which is compatible with SLES version 15 SP 1.
+
+According to SAP guides:
+
+https://help.sap.com/doc/4e7c047f2c9e4cbe97800ffaf7b68f8e/10.0/en-US/B1_for_SAP_HANA_Admin_Guide.pdf https://help.sap.com/doc/6bdf40d706f940a7a5eb192dc93cdaeb/9.3/en-US/B1_for_SAP_HANA_Admin_Guide.pdf
+
+Such an upgrade can give you some ""headaches"". Ideally, you should do a fresh installation of SLES. But if you want to continue with the upgrade, removing the server components, you must uninstall SAP B1 for HANA as SAP note: https://launchpad.support.sap.com/#/notes/2538555
+
+And uninstall HANA Platform 1.0 as described by SAP: https://help.sap.com/viewer/2c1988d620e04368aa4103bf26f17727/1.0.12/en-US/fe260325282d458f9304071e1857d5ba.html"
+INC0008,SAP_HANA,Is it possible to install SBO 9.3 PL07 for HANA on SUSE 12 SP5 or SUSE 15 SP2?,"1. I know SBO 9.3 PL07 can be installed on SAP HANA Platform Edition 1.0 SPS 12 Revision 122.27 (B1_for_SAP_HANA_Admin_Guide.pdf).
+
+2. I follow the SAP HANA: Supported Operating Systems, it told me can be installed on SUSE 12 SP3
+
+But my customer want to know exactly, is it possible install SBO9.3 PL07 for HANA on SUSE 12 SP5 or SUSE 15 SP2 ?",3-Medium,Resolved,May-05-2022,"First of all, you should think about some considerations. First, the SLES upgrade!
+
+SAP B1 9.3 operates on the SAP HANA Platform 1.0 version, which is compatible with, at most, SLES version 12 SP 4.
+
+While SAP B1 10.0 works with the SAP HANA Platform 2.0 version, which is compatible with SLES version 15 SP 2.
+
+According to SAP guides:
+
+https://help.sap.com/doc/4e7c047f2c9e4cbe97800ffaf7b68f8e/10.0/en-US/B1_for_SAP_HANA_Admin_Guide.pdf https://help.sap.com/doc/6bdf40d706f940a7a5eb192dc93cdaeb/9.3/en-US/B1_for_SAP_HANA_Admin_Guide.pdf
+
+Such an upgrade can give you some ""headaches"". Ideally, you should do a fresh installation of SLES. But if you want to continue with the upgrade, removing the server components, you must uninstall SAP B1 for HANA as SAP note: https://launchpad.support.sap.com/#/notes/2538555
+
+And uninstall HANA Platform 1.0 as described by SAP: https://help.sap.com/viewer/2c1988d620e04368aa4103bf26f17727/1.0.12/en-US/fe260325282d458f9304071e1857d5ba.html"
+INC0009,SAP_HANA,S/4 HANA 2021 compatibility to HANA DB OS,"SAP S/4HANA 2021 FPS02 clearly states the minimum SAP HANA 2.0 SPS 05 Rev 56 is supported. However, it also clearly says SUSE 15 or RHEL 8 or higher is required on the OS of the Hana DB.
+
+My scenario is I have HANA appliances with SLES 12 SP5 running HANA 2.0 SPS05 Rev 59 and We want to install S/4HANA 2021 but It would require an OS upgrade?",3-Medium,Resolved,May-10-2022,"As a summary, following checks before setup of hana server are important to get into trouble during upgrade/installation:
+
+SAP APPL / HANA DB Server: PAM of S/4HANA release regarding supported OS release
+check minimum HANA rev for the target S/4 stack in Release Information Note of your SAP S/4HANA target stack or the relevant Feature Pack Stack version <xx> (for example 3138483 - SAP S/4HANA 2021 Feature Package Stack 01: Additional Release Information
+via SAP S/4HANA | SAP Help Portal - > Install/upgrade guides-> SAP S/4HANA 2021 Feature Package Stack XX: Additional Release Information note (note numbers are normally linked in the installation/upgrade guides in chapter ""Installation Documentation"")
+DB Server: check conditions in 2235581 - SAP HANA: Supported Operating Systems
+RHEL only: 3057467 - Which compat-sap-c++ package do I need for SAP on RHEL? - SAP ONE Support Launchpad
+check 2655761 - SAP S/4HANA - restrictions and recommendations regarding specific revisions of SAP HANA database for use in SAP S/4HANA - SAP ONE Support Launchpad"
+INC0010,SAP_S4HANA,Connection between S/4HANA releases and HANA DB SPS,"Can you please help me understanding maintenance relationship between S/4HANA and HANA 2.0 DB?
+
+Does HANA DB maintenance support end-date differs if it is packaged in S/4HANA?
+
+I think I understand HANA 2.0 DB maintenance cycle:
+
+SPS01-03 ended
+
+SPS04 April 2021
+
+SPS05 June 2025 (long term supported SPS)
+
+While
+
+S/4HANA 1709 End of 2022 (it came with HANA 2.0 SPS01 if I am not mitaken)
+
+S/4HANA 1809 End of 2023
+
+S/4HANA 1909 End of 2024
+
+May I or should I upgrade to HANA 2.0 SPS04 or 05 while still keep using S/4HANA 1709 until it is still supported?",3-Medium,New,May-15-2022,
+INC0011,Windows_OS,"Windows Boot Manager error - 0xC0000225 ""Status not found""","Windows Boot Manager states ""Windows failed to start. A recent hardware or software change might be the cause.""
+""The operating system couldn't be loaded because a critical system driver is missing or contains errors.""",1-Very High,Resolved,May-20-2022,"Create and access a Repair VM.
+Select a Solution:
+1. Repair the System File
+2. Add the OSDevice Variable
+Enable serial console and memory dump collection.
+Rebuild the VM."
+INC0012,Windows_OS,Unable to refresh or reset PC after Automatic Repair fails in Windows 8,After automatic repair fail unable to reset or restore the PC,1-Very High,Resolved,May-22-2022,"1. After Automatic Repair fails to repair your PC, select Advanced options and then Troubleshoot.
+
+2. Select Advanced options and then select Command Prompt.
+
+3. If prompted, enter in the password for the user name.
+
+4. At the Command Prompt, go to the \windows\system32\config folder by typing the following command: 
+cd %windir%\system32\config
+
+5. Rename the System and Software registry hives to System.001 and Software.001 by using the following commands: 
+ren system system.001  
+ren software software.001
+
+6. Type exit without the quotes to exit the Command Prompt and reboot the PC back to the Automatic Repair screen.
+
+7. After selecting Advanced options and then Troubleshoot, select either Refresh your PC or Reset your PC."
+INC0013,Windows_OS,Invalid Boot File Received Error Message When PXE booting from WDS,"When using PXE to boot a client computer from a WDS server getting the error message:
+
+Invalid boot file received",2- High,Resolved,May-27-2022,"If you have a mix of UEFI and Legacy BIOS machines, you cannot use DHCP Scope Options to direct PXE clients to the Boot Program on the WDS server. You must use IP Helper Table Entries. For more information on configuring IP helper table entries, contact your router/switch manufacturer."
+INC0014,Windows_OS,Invalid Boot File Received Error Message When PXE booting from WDS,"When using PXE to boot a client computer from a WDS server getting the error message:
+
+PXE client hangs. At the point of the error you are executing code from the PXE bios, so the actual error message can vary.",2- High,Resolved,Jun-10-2022,"If you have a mix of UEFI and Legacy BIOS machines, you cannot use DHCP Scope Options to direct PXE clients to the Boot Program on the WDS server. You must use IP Helper Table Entries. For more information on configuring IP helper table entries, contact your router/switch manufacturer."
+INC0015,Windows_OS,PROCESS1_INITIALIZATION_FAILED stop error after you upgrade to Windows 10 Version 1607,"After perform an upgrade to Windows 10 Version 1607 from Windows 7 the system fails to start, and getting the  ""PROCESS1_INITIALIZATION_FAILED"" error message.",2- High,Resolved,Jun-25-2022,"To work around this issue, roll back the system to the previous OS, uninstall Hitachi HIBUN, and then upgrade to Windows 10 Version 1607. To do this, follow these steps:
+
+Reboot the computer, and wait for the Windows Recovery Environment (WinRE) to start.
+Click Troubleshoot, select Advanced Options, and then select Go back to the previous build.
+Uninstall Hitachi HIBUN.
+Upgrade to Windows 10 Version 1607."
+INC0016,Windows_OS,PROCESS1_INITIALIZATION_FAILED stop error after you upgrade to Windows 10 Version 1607,"After perform an upgrade to Windows 10 Version 1607 from Windows 8 the system fails to start, and getting the  ""PROCESS1_INITIALIZATION_FAILED"" error message.",2- High,Resolved,Jun-30-2022,"To work around this issue, roll back the system to the previous OS, uninstall Hitachi HIBUN, and then upgrade to Windows 10 Version 1607. To do this, follow these steps:
+
+Reboot the computer, and wait for the Windows Recovery Environment (WinRE) to start.
+Click Troubleshoot, select Advanced Options, and then select Go back to the previous build.
+Uninstall Hitachi HIBUN.
+Upgrade to Windows 10 Version 1607."
+INC0017,Windows_OS,PROCESS1_INITIALIZATION_FAILED stop error after you upgrade to Windows 10 Version 1607,"After perform an upgrade to Windows 10 Version 1607 from Windows 8.1 the system fails to start, and getting the  ""PROCESS1_INITIALIZATION_FAILED"" error message.",2- High,Resolved,Jul-10-2022,"To work around this issue, roll back the system to the previous OS, uninstall Hitachi HIBUN, and then upgrade to Windows 10 Version 1607. To do this, follow these steps:
+
+Reboot the computer, and wait for the Windows Recovery Environment (WinRE) to start.
+Click Troubleshoot, select Advanced Options, and then select Go back to the previous build.
+Uninstall Hitachi HIBUN.
+Upgrade to Windows 10 Version 1607."
+,,,,,,,
