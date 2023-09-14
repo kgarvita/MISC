@@ -1,10 +1,11 @@
-Ticket#,Component,Subject,Description,Priority,State,Reported On,Resolution
-INC0001,SAP_ECC_BW,SAP on Linux Suse -vs- Oracle Linux -vs- Linux Red Hat,"We are planning on replatforming our ECC and BW SAP environments based on some version of Linux. We are running Oracle on the backend.
+Ticket#,Component,Subject,Description,Priority,State,Reported On,Resolution,Attachement,Attachment Text,Log File,Memory Dump
+INC0001,SAP_ECC_BW,Not able to install pip python packages,I need to install many python packages for multiple development tasks. I can do dso on AWS machine but when I am trying it on my local laptop in VS Code. It is giving SSL error. Tried installing SSL certificate as well but no luck. Any help will be appreciated.,,,,"Needed the permission to access restricted website to properly install the SSL certificate. After the permission, installed the certificate to resolve the issue.",C:\Users\garvita.kalra\OneDrive - HCL TECHNOLOGIES LIMITED\Documents\Generative AI\Semanti Search Presentation\data\SSL_error.PNG,,,
+INC0002,SAP_ECC_BW,SAP on Linux Suse -vs- Oracle Linux -vs- Linux Red Hat,"We are planning on replatforming our ECC and BW SAP environments based on some version of Linux. We are running Oracle on the backend.
 
 I am curious if anyone out there would know why we might use Linux Suse over Oracle Linux and vice-versa. Is there a technical argument to be made for using Linux Red Hat above all else?
 
-Are the technical advantages for one over the other? Are more SAP shops using one more than the other?",3-Medium,Resolved,Jun-06-2021,"I’m referring to the aspect of FC where the storage array vendor will have a simple list of supported attached operating systems--this will probably include at least Red Hat and Suse nowadays--and then a more detailed matrix listing operating system, attached server vendor, model and FC adapter model, etc. and then the server hardware vendor will also have a list of supported storage arrays and then a more detailed matrix for the same things OS, server, HBA. Getting your combination to appear in both the storage and server vendors matrix may be most likely with Red Hat, followed by Suse and Oracle Linux."
-INC0002,SAP_ECC,Linux Redhat or SUSE,"Could anyone tell me what are the diffences between running SAP ECC on Linux Redhat or SUSE?
+Are the technical advantages for one over the other? Are more SAP shops using one more than the other?",3-Medium,Resolved,Jun-06-2021,"I’m referring to the aspect of FC where the storage array vendor will have a simple list of supported attached operating systems--this will probably include at least Red Hat and Suse nowadays--and then a more detailed matrix listing operating system, attached server vendor, model and FC adapter model, etc. and then the server hardware vendor will also have a list of supported storage arrays and then a more detailed matrix for the same things OS, server, HBA. Getting your combination to appear in both the storage and server vendors matrix may be most likely with Red Hat, followed by Suse and Oracle Linux.",,,,
+INC0003,SAP_ECC,Linux Redhat or SUSE,"Could anyone tell me what are the diffences between running SAP ECC on Linux Redhat or SUSE?
 
 are there any pros/cons about running one or another?
 
@@ -21,10 +22,10 @@ See https://redhat-sap.github.io/sap-workshops/#/ for some good examples of Auto
 If you would like to get a detailed technical overview of the current RHEL releases 8 and 9, look here:
 https://access.redhat.com/solutions/3082481
 
-RHEL is certified to run SAP in all major hyperscalers, private cloud and on prem on x86 and IBM Power. For IBM Cloud, RHEL is the exclusive option."
-INC0003,SAP_LINUX,Oracle 10g R2 on Oracle Enterprise Linux 5.x,Is Oracle Enterprise Linux 5.x supported as OS for Oracle when it comes to SAP?? It is RedHat Enterprise Linux 5.x with a 6 month delay over Oracle for Major release changes…,3-Medium,Resolved,Jul-15-2019,LINUX REDHAT EL5 is supported with oracle 10g (At least Oracle patchset 10.2.0.2 required.)
-INC0004,SAP_ECC,Linux upgradation,"I installed ecc5.0 on Red Hat Linux AS 4 with oracle 9.2.0.6.0 platform now i am planning to upgrade to Oracle Enterprise Linux AS 5,is that possible ?,",2- High,In-Progress,Apr-20-2022,
-INC0005,SAP_LINUX,Upgrade SAP,"we are planning to upgrade OS suse from suse 11 sp4 for machine power ppc64le big endian to suse 15 sp4 for machine power ppc64le little endian...
+RHEL is certified to run SAP in all major hyperscalers, private cloud and on prem on x86 and IBM Power. For IBM Cloud, RHEL is the exclusive option.",,,,
+INC0004,SAP_LINUX,Oracle 10g R2 on Oracle Enterprise Linux 5.x,Is Oracle Enterprise Linux 5.x supported as OS for Oracle when it comes to SAP?? It is RedHat Enterprise Linux 5.x with a 6 month delay over Oracle for Major release changes…,3-Medium,Resolved,Jul-15-2019,LINUX REDHAT EL5 is supported with oracle 10g (At least Oracle patchset 10.2.0.2 required.),,,,
+INC0005,SAP_ECC,Linux upgradation,"I installed ecc5.0 on Red Hat Linux AS 4 with oracle 9.2.0.6.0 platform now i am planning to upgrade to Oracle Enterprise Linux AS 5,is that possible ?,",2- High,In-Progress,Apr-20-2022,,,,,
+INC0006,SAP_LINUX,Upgrade SAP,"we are planning to upgrade OS suse from suse 11 sp4 for machine power ppc64le big endian to suse 15 sp4 for machine power ppc64le little endian...
 our SAP is :
 
 EHP7 for SAP ERP 6.0
@@ -39,8 +40,8 @@ Specifically, SLE 11 on POWER (big endian) to SLE 15 SP4 on POWER (new: little e
 
 Also, since SUSE Linux Enterprise 15 is 64-bit only, upgrades from any 32-bit SUSE Linux Enterprise 11 systems to SUSE Linux Enterprise 15 and later are not supported.
 
-To make a cross-architecture upgrade, you need to perform a new installation."
-INC0006,SAP_S4HANA,Upgrading to SLES15 versus fresh installation,"we operate the SAP systems for some companies.
+To make a cross-architecture upgrade, you need to perform a new installation.",,,,
+INC0007,SAP_S4HANA,Upgrading to SLES15 versus fresh installation,"we operate the SAP systems for some companies.
 
 Some of our customers are currently running S/4HANA 1909 on ppc64le with SLES12.
 
@@ -106,8 +107,8 @@ I would consider disabling any automatic starting of HANA, unmounting the HANA f
 
 Be sure to understand the supported upgrade paths to 15 SP3 because your post did not mention what SLES 12 SP level you are currently at. Follow all of the steps in the offline upgrade including the post-upgrade checks.
 
-I would manually do the first LPAR but consider looking at automation tools if you have many LPARs to upgrade. SUSE has a very good tool for centralized Linux systems management."
-INC0007,SAP_LINUX,How to uninstall server components from linux OS,Please guide me to uninstall Server components from linux os. I want to update server components from version 9 to version 10. Or else give me the ideas to update.,3-Medium,Resolved,Apr-27-2022,"First of all, you should think about some considerations. First, the SLES upgrade!
+I would manually do the first LPAR but consider looking at automation tools if you have many LPARs to upgrade. SUSE has a very good tool for centralized Linux systems management.",,,,
+INC0008,SAP_LINUX,How to uninstall server components from linux OS,Please guide me to uninstall Server components from linux os. I want to update server components from version 9 to version 10. Or else give me the ideas to update.,3-Medium,Resolved,Apr-27-2022,"First of all, you should think about some considerations. First, the SLES upgrade!
 
 SAP B1 9.3 operates on the SAP HANA Platform 1.0 version, which is compatible with, at most, SLES version 12 SP 4.
 
@@ -119,8 +120,8 @@ https://help.sap.com/doc/4e7c047f2c9e4cbe97800ffaf7b68f8e/10.0/en-US/B1_for_SAP_
 
 Such an upgrade can give you some ""headaches"". Ideally, you should do a fresh installation of SLES. But if you want to continue with the upgrade, removing the server components, you must uninstall SAP B1 for HANA as SAP note: https://launchpad.support.sap.com/#/notes/2538555
 
-And uninstall HANA Platform 1.0 as described by SAP: https://help.sap.com/viewer/2c1988d620e04368aa4103bf26f17727/1.0.12/en-US/fe260325282d458f9304071e1857d5ba.html"
-INC0008,SAP_HANA,Is it possible to install SBO 9.3 PL07 for HANA on SUSE 12 SP5 or SUSE 15 SP2?,"1. I know SBO 9.3 PL07 can be installed on SAP HANA Platform Edition 1.0 SPS 12 Revision 122.27 (B1_for_SAP_HANA_Admin_Guide.pdf).
+And uninstall HANA Platform 1.0 as described by SAP: https://help.sap.com/viewer/2c1988d620e04368aa4103bf26f17727/1.0.12/en-US/fe260325282d458f9304071e1857d5ba.html",,,,
+INC0009,SAP_HANA,Is it possible to install SBO 9.3 PL07 for HANA on SUSE 12 SP5 or SUSE 15 SP2?,"1. I know SBO 9.3 PL07 can be installed on SAP HANA Platform Edition 1.0 SPS 12 Revision 122.27 (B1_for_SAP_HANA_Admin_Guide.pdf).
 
 2. I follow the SAP HANA: Supported Operating Systems, it told me can be installed on SUSE 12 SP3
 
@@ -136,8 +137,8 @@ https://help.sap.com/doc/4e7c047f2c9e4cbe97800ffaf7b68f8e/10.0/en-US/B1_for_SAP_
 
 Such an upgrade can give you some ""headaches"". Ideally, you should do a fresh installation of SLES. But if you want to continue with the upgrade, removing the server components, you must uninstall SAP B1 for HANA as SAP note: https://launchpad.support.sap.com/#/notes/2538555
 
-And uninstall HANA Platform 1.0 as described by SAP: https://help.sap.com/viewer/2c1988d620e04368aa4103bf26f17727/1.0.12/en-US/fe260325282d458f9304071e1857d5ba.html"
-INC0009,SAP_HANA,S/4 HANA 2021 compatibility to HANA DB OS,"SAP S/4HANA 2021 FPS02 clearly states the minimum SAP HANA 2.0 SPS 05 Rev 56 is supported. However, it also clearly says SUSE 15 or RHEL 8 or higher is required on the OS of the Hana DB.
+And uninstall HANA Platform 1.0 as described by SAP: https://help.sap.com/viewer/2c1988d620e04368aa4103bf26f17727/1.0.12/en-US/fe260325282d458f9304071e1857d5ba.html",,,,
+INC0010,SAP_HANA,S/4 HANA 2021 compatibility to HANA DB OS,"SAP S/4HANA 2021 FPS02 clearly states the minimum SAP HANA 2.0 SPS 05 Rev 56 is supported. However, it also clearly says SUSE 15 or RHEL 8 or higher is required on the OS of the Hana DB.
 
 My scenario is I have HANA appliances with SLES 12 SP5 running HANA 2.0 SPS05 Rev 59 and We want to install S/4HANA 2021 but It would require an OS upgrade?",3-Medium,Resolved,May-10-2022,"As a summary, following checks before setup of hana server are important to get into trouble during upgrade/installation:
 
@@ -146,8 +147,8 @@ check minimum HANA rev for the target S/4 stack in Release Information Note of y
 via SAP S/4HANA | SAP Help Portal - > Install/upgrade guides-> SAP S/4HANA 2021 Feature Package Stack XX: Additional Release Information note (note numbers are normally linked in the installation/upgrade guides in chapter ""Installation Documentation"")
 DB Server: check conditions in 2235581 - SAP HANA: Supported Operating Systems
 RHEL only: 3057467 - Which compat-sap-c++ package do I need for SAP on RHEL? - SAP ONE Support Launchpad
-check 2655761 - SAP S/4HANA - restrictions and recommendations regarding specific revisions of SAP HANA database for use in SAP S/4HANA - SAP ONE Support Launchpad"
-INC0010,SAP_S4HANA,Connection between S/4HANA releases and HANA DB SPS,"Can you please help me understanding maintenance relationship between S/4HANA and HANA 2.0 DB?
+check 2655761 - SAP S/4HANA - restrictions and recommendations regarding specific revisions of SAP HANA database for use in SAP S/4HANA - SAP ONE Support Launchpad",,,,
+INC0011,SAP_S4HANA,Connection between S/4HANA releases and HANA DB SPS,"Can you please help me understanding maintenance relationship between S/4HANA and HANA 2.0 DB?
 
 Does HANA DB maintenance support end-date differs if it is packaged in S/4HANA?
 
@@ -167,15 +168,15 @@ S/4HANA 1809 End of 2023
 
 S/4HANA 1909 End of 2024
 
-May I or should I upgrade to HANA 2.0 SPS04 or 05 while still keep using S/4HANA 1709 until it is still supported?",3-Medium,New,May-15-2022,
-INC0011,Windows_OS,"Windows Boot Manager error - 0xC0000225 ""Status not found""","Windows Boot Manager states ""Windows failed to start. A recent hardware or software change might be the cause.""
+May I or should I upgrade to HANA 2.0 SPS04 or 05 while still keep using S/4HANA 1709 until it is still supported?",3-Medium,New,May-15-2022,,,,,
+INC0012,Windows_OS,"Windows Boot Manager error - 0xC0000225 ""Status not found""","Windows Boot Manager states ""Windows failed to start. A recent hardware or software change might be the cause.""
 ""The operating system couldn't be loaded because a critical system driver is missing or contains errors.""",1-Very High,Resolved,May-20-2022,"Create and access a Repair VM.
 Select a Solution:
 1. Repair the System File
 2. Add the OSDevice Variable
 Enable serial console and memory dump collection.
-Rebuild the VM."
-INC0012,Windows_OS,Unable to refresh or reset PC after Automatic Repair fails in Windows 8,After automatic repair fail unable to reset or restore the PC,1-Very High,Resolved,May-22-2022,"1. After Automatic Repair fails to repair your PC, select Advanced options and then Troubleshoot.
+Rebuild the VM.",,,,
+INC0013,Windows_OS,Unable to refresh or reset PC after Automatic Repair fails in Windows 8,After automatic repair fail unable to reset or restore the PC,1-Very High,Resolved,May-22-2022,"1. After Automatic Repair fails to repair your PC, select Advanced options and then Troubleshoot.
 
 2. Select Advanced options and then select Command Prompt.
 
@@ -190,29 +191,164 @@ ren software software.001
 
 6. Type exit without the quotes to exit the Command Prompt and reboot the PC back to the Automatic Repair screen.
 
-7. After selecting Advanced options and then Troubleshoot, select either Refresh your PC or Reset your PC."
-INC0013,Windows_OS,Invalid Boot File Received Error Message When PXE booting from WDS,"When using PXE to boot a client computer from a WDS server getting the error message:
-
-Invalid boot file received",2- High,Resolved,May-27-2022,"If you have a mix of UEFI and Legacy BIOS machines, you cannot use DHCP Scope Options to direct PXE clients to the Boot Program on the WDS server. You must use IP Helper Table Entries. For more information on configuring IP helper table entries, contact your router/switch manufacturer."
+7. After selecting Advanced options and then Troubleshoot, select either Refresh your PC or Reset your PC.",,,,
 INC0014,Windows_OS,Invalid Boot File Received Error Message When PXE booting from WDS,"When using PXE to boot a client computer from a WDS server getting the error message:
 
-PXE client hangs. At the point of the error you are executing code from the PXE bios, so the actual error message can vary.",2- High,Resolved,Jun-10-2022,"If you have a mix of UEFI and Legacy BIOS machines, you cannot use DHCP Scope Options to direct PXE clients to the Boot Program on the WDS server. You must use IP Helper Table Entries. For more information on configuring IP helper table entries, contact your router/switch manufacturer."
-INC0015,Windows_OS,PROCESS1_INITIALIZATION_FAILED stop error after you upgrade to Windows 10 Version 1607,"After perform an upgrade to Windows 10 Version 1607 from Windows 7 the system fails to start, and getting the  ""PROCESS1_INITIALIZATION_FAILED"" error message.",2- High,Resolved,Jun-25-2022,"To work around this issue, roll back the system to the previous OS, uninstall Hitachi HIBUN, and then upgrade to Windows 10 Version 1607. To do this, follow these steps:
+Invalid boot file received",2- High,Resolved,May-27-2022,"If you have a mix of UEFI and Legacy BIOS machines, you cannot use DHCP Scope Options to direct PXE clients to the Boot Program on the WDS server. You must use IP Helper Table Entries. For more information on configuring IP helper table entries, contact your router/switch manufacturer.",,,,
+INC0015,Windows_OS,Invalid Boot File Received Error Message When PXE booting from WDS,"When using PXE to boot a client computer from a WDS server getting the error message:
+
+PXE client hangs. At the point of the error you are executing code from the PXE bios, so the actual error message can vary.",2- High,Resolved,Jun-10-2022,"If you have a mix of UEFI and Legacy BIOS machines, you cannot use DHCP Scope Options to direct PXE clients to the Boot Program on the WDS server. You must use IP Helper Table Entries. For more information on configuring IP helper table entries, contact your router/switch manufacturer.",,,,
+INC0016,Windows_OS,PROCESS1_INITIALIZATION_FAILED stop error after you upgrade to Windows 10 Version 1607,"After perform an upgrade to Windows 10 Version 1607 from Windows 7 the system fails to start, and getting the  ""PROCESS1_INITIALIZATION_FAILED"" error message.",2- High,Resolved,Jun-25-2022,"To work around this issue, roll back the system to the previous OS, uninstall Hitachi HIBUN, and then upgrade to Windows 10 Version 1607. To do this, follow these steps:
 
 Reboot the computer, and wait for the Windows Recovery Environment (WinRE) to start.
 Click Troubleshoot, select Advanced Options, and then select Go back to the previous build.
 Uninstall Hitachi HIBUN.
-Upgrade to Windows 10 Version 1607."
-INC0016,Windows_OS,PROCESS1_INITIALIZATION_FAILED stop error after you upgrade to Windows 10 Version 1607,"After perform an upgrade to Windows 10 Version 1607 from Windows 8 the system fails to start, and getting the  ""PROCESS1_INITIALIZATION_FAILED"" error message.",2- High,Resolved,Jun-30-2022,"To work around this issue, roll back the system to the previous OS, uninstall Hitachi HIBUN, and then upgrade to Windows 10 Version 1607. To do this, follow these steps:
+Upgrade to Windows 10 Version 1607.",,,,
+INC0017,Windows_OS,PROCESS1_INITIALIZATION_FAILED stop error after you upgrade to Windows 10 Version 1607,"After perform an upgrade to Windows 10 Version 1607 from Windows 8 the system fails to start, and getting the  ""PROCESS1_INITIALIZATION_FAILED"" error message.",2- High,Resolved,Jun-30-2022,"To work around this issue, roll back the system to the previous OS, uninstall Hitachi HIBUN, and then upgrade to Windows 10 Version 1607. To do this, follow these steps:
 
 Reboot the computer, and wait for the Windows Recovery Environment (WinRE) to start.
 Click Troubleshoot, select Advanced Options, and then select Go back to the previous build.
 Uninstall Hitachi HIBUN.
-Upgrade to Windows 10 Version 1607."
-INC0017,Windows_OS,PROCESS1_INITIALIZATION_FAILED stop error after you upgrade to Windows 10 Version 1607,"After perform an upgrade to Windows 10 Version 1607 from Windows 8.1 the system fails to start, and getting the  ""PROCESS1_INITIALIZATION_FAILED"" error message.",2- High,Resolved,Jul-10-2022,"To work around this issue, roll back the system to the previous OS, uninstall Hitachi HIBUN, and then upgrade to Windows 10 Version 1607. To do this, follow these steps:
+Upgrade to Windows 10 Version 1607.",,,,
+INC0018,Windows_OS,PROCESS1_INITIALIZATION_FAILED stop error after you upgrade to Windows 10 Version 1607,"After perform an upgrade to Windows 10 Version 1607 from Windows 8.1 the system fails to start, and getting the  ""PROCESS1_INITIALIZATION_FAILED"" error message.",2- High,Resolved,Jul-10-2022,"To work around this issue, roll back the system to the previous OS, uninstall Hitachi HIBUN, and then upgrade to Windows 10 Version 1607. To do this, follow these steps:
 
 Reboot the computer, and wait for the Windows Recovery Environment (WinRE) to start.
 Click Troubleshoot, select Advanced Options, and then select Go back to the previous build.
 Uninstall Hitachi HIBUN.
-Upgrade to Windows 10 Version 1607."
-,,,,,,,
+Upgrade to Windows 10 Version 1607.",,,,
+INC0019,Linux_OS,How do you turn on/off Linux kernel Virtio features?,"Virtio documentation, like here, describes many feature bits that can be set or ""negotiated"" for a virtio-device. For instance, there is the VIRTIO_RING_F_EVENT_IDX feature that can be turned on or off.
+
+I have not come across any documentation that describes how to actually turn features on or off. Is there any way to turn features on or off at runtime (like through a /proc/ variable)? Are features something to be configured using make menuconfig when compiling a kernel? Or is the only way to modify the source code of a virtio device file and add/remove features there (like modifying this enum in vhost/vhost.h)?",4-Low,Resolved,Jul-01-2021,"The latest Virtio Committee specification, v1.2, describes the virtio feature bits here. Specifically:
+
+Each virtio device offers all the features it understands. During device initialization, the driver reads this and tells the device the subset that it accepts. The only way to renegotiate is to reset the device.
+
+This allows for forwards and backwards compatibility: if the device is enhanced with a new feature bit, older drivers will not write that feature bit back to the device. Similarly, if a driver is enhanced with a feature that the device doesn’t support, it see the new feature is not offered.
+
+So the answer is: you need to decide at initialization time which feature(s) you want your device to support and prepare to do the feature negotiation properly per the Device Initialization section.",,,,
+INC0020,Linux_OS,"ARM64 SVE registers not preserved when issuing a syscall, why does Linux discard SVE registers with sve_user_discard()?","n the Linux 5.10 AArch64 syscall.c source code, there is a function sve_user_discard(), which can make the SVE registers' [max:128] bits being zeroed. Here's the code.
+
+I cannot understand the usage of this function. Can anyone explain it to me?
+
+I got a bug when running a SVE program and finally found the root cause is the sve_user_discard(). This function makes the SVE registers in userspace only remain bits [127:0], which makes my program not work as expected.",4-Low,Resolved,Jul-05-2021,"After digging around a bit, it turns out that all I needed to do was RTFM :'). This behavior is intended and documented.
+
+The Linux ARM64 Syscall ABI explicitly resets bits above 127 of the Z registers, all bits of the P registers and the FFR register on syscall entry. Therefore, there is no way to preserve full SVE state on ARM64 Linux between system calls. If your code uses SVE, you will need to split it up so that SVE is only used between syscalls. Even with a vector length of 128 bits, you would still lose the values of P0..P15 and FFR upon syscall entry.
+
+Here's a quote from kernel documentation on SVE confirming this behavior. I highlighted the interesting parts in bold:
+
+3. System call behaviour
+On syscall, V0..V31 are preserved (as without SVE). Thus, bits [127:0] of Z0..Z31 are preserved. All other bits of Z0..Z31, and all of P0..P15 and FFR become unspecified on return from a syscall.
+
+The SVE registers are not used to pass arguments to or receive results from any syscall.
+
+In practice the affected registers/bits will be preserved or will be replaced with zeros on return from a syscall, but userspace should not make assumptions about this. The kernel behaviour may vary on a case-by-case basis.",,,,
+INC0021,Compilers,Does a C compiler provides any type definitions which have definite length?,"In the C language Specification, there are constraints of minimum length of built-in types; thus, a compiler must ensure that the length of char is at least 8 bit, int 32 bits, long long 64 bits, etc.
+
+But, when I am implementing architecture-related parts of my kernel, I need some types that have definite lengths of 8 bits, 16 bits, 32 bits or 64 bits. With those types, I can read form or write to 8-bit and 16-bit I/O ports, or 32-bit and 64-bit registers. Are there any existing types that have assured lengths?",4-Low,Resolved,Jul-06-2021,"The C Standard specifies the ""stdint.h"" header/library file (which you can incorporate into your code with a line like #include <stdint.h>) that provdes definitions for 'fixed width' integer types.
+
+From this Draft C11 Standard:
+
+7.20 Integer types <stdint.h>
+1      The header <stdint.h> declares sets of integer types having specified widths, and defines corresponding sets of macros. It also defines macros that specify limits of integer types corresponding to types defined in other standard headers.
+
+Using this header, you have access to types like int64_t and uint8_t; from the same Draft Standard section (bold italic emphasis in §3 mine):
+
+7.20.1.1 Exact-width integer types
+1      The typedef name intN_t designates a signed integer type with width N, no padding bits, and a two’s complement representation. Thus, int8_t denotes such a signed integer type with a width of exactly 8 bits.
+
+2      The typedef name uintN_t designates an unsigned integer type with width N, no padding bits, Thus, uint24_t denotes such an unsigned integer type with a width of exactly 24 bits.
+
+3      These types are optional. However, if an implementation provides integer types with widths of 8, 16, 32, or 64 bits, no padding bits, and (for the signed types) that have a two’s complement representation, it shall define the corresponding typedef names.
+",,,,
+INC0022,Compilers,eBPF: Loading and attaching an eBPF program to sys_enter_execve using only system calls,"I am attempting to introduce mutation to eBPF bytecode. As such I'd like to load eBPF bytecode from a simple object file, not from an ELF (as is required by libbpf to my knowledge).
+
+I have a very simple eBPF program that writes 'hello world' to the trace pipe:
+
+#include ""vmlinux.h""
+#include <bpf/bpf_helpers.h>
+
+int hello_world(void *ctx) {
+
+    char msg[12] = ""Hello World\n"";
+    bpf_trace_printk(msg, sizeof(msg));
+    return 0;
+}",2- High,Resolved,Jul-07-2021,"What byte code are you using for the bpf_trace_printk(msg, sizeof(msg)); code ? Looks like the byte code not work as expected, it should like this:
+
+BPF_MOV64_IMM(BPF_REG_2, 14),
+BPF_RAW_INSN(BPF_JMP | BPF_CALL, 0, 0, 0, BPF_FUNC_trace_printk),
+Here is a full Hello World example for attaching the tracepoint ebpf program only with c and syscall, maybe it can help you:
+
+https://github.com/mozillazg/hello-libbpfgo/blob/691030b64fa1a4942abd8be2a519e30cfcbb0164/27-attach-tracepoint-with-syscall/main.c",,,,
+INC0023,Linux_Containers,Kubernetes init container sysctl changes affecting containers under the POD,I made a change to sysctl net.ipv4.tcp_keepalive_time via init container. But i can see the changes to container under POD.How does this changes in initcontainer[BusyBox] affects container of a differenent image [Linux]?,4-Low,Resolved,Jul-07-2021,The value net.ipv4.tcp_keepalive_time will be same between the init container and main container inside pod as it will share network namespace. For more details please refer documentation on network namespace perspective,,,,
+INC0024,GIT_SEND_EMAIL,I encounterd the error as below. Can anyone help with this?,"git send-email  --in-reply-to=CANn89iJCDYteM_1SQ-h2=htUAE4FqrBAak0kHt_Z990XYZThzQ@mail.gmail.com    --to=edumazet@google.com     --cc=davem@davemlof
+t.net     --cc=dhowells@redhat.com     --cc=fw@strlen.de     --cc=johannes@sipsolutions.net     --cc=keescook@chromium.org     --cc=kuba@kernel.org     --cc=kuniyu@amazon.com     --cc=linux
+-kernel@vger.kernel.org     --cc=netdev@vger.kernel.org     --cc=pabeni@redhat.com     --cc=pctammela@mojatatu.com     --cc=xqjcool@gmail.com reply
+reply
+No subject line in reply? at /usr/lib/git-core/git-send-email line 720.",4-Low,Resolved,Jul-07-2021,"I found that I missed the ""Subject:"" part in my reply content.
+
+Below is the offical note:
+
+Be sure your reply has a Subject: header at the top and a blank line before the message body.",,,,
+INC0025,LINUX_SYS_CALL,Syscall hijacking a specific process,"I want to make it so that syscalls from a particular process are controlled by another process (admin or same user, doesn't really matter to me.) I realize this gives some rootkit trojan vibes, but I'm not actually making malware; I just need an extra level of control over a specific process, not all of them. I also don't want to have to redefine every syscall (just, like read, write, connect and a couple more.)
+
+What I don't want:
+
+one of those big rootkits that highjack the syscall table inside the kernel's memory.
+anything like LD_PRELOAD
+an answer that just says ""you can't""
+I'd rather not have to, like, use ptrace to make all instances of 0x0f 0x05 instead jump to some fancy shellcode (especially because that shellcode would be communicating over UDP with another computer.)",2- High,Resolved,Jul-07-2021,"Systemtap and eBPF are instrumentation frameworks that allow you to trace and analyze the behavior of the Linux kernel and user-space applications. With these tools, you can trace specific syscalls for a particular process and apply custom handlers. While still quite advanced, they provide a safer and more manageable way to achieve syscall interception compared to direct manipulation of the syscall table.
+
+or, Seccomp (short for secure computing mode) allows you to apply fine-grained restrictions on the syscalls that a process can use. By using a Berkeley Packet Filter (BPF) program, you can filter and control the syscalls that are allowed or denied for a specific process. While seccomp wasn't initially designed for dynamic modification of syscalls, it can be utilized to restrict and control syscall behavior for targeted processes.
+
+You mentioned you'd rather not use LD_PRELOAD, but it's worth noting that this technique allows you to intercept calls to specific functions, including syscalls, by preloading a shared library. While you mentioned you don't want to redefine every syscall, you can use this method to override only specific functions in the targeted process.",,,,
+INC0026,LINUX_SOCKET,Unable to Parse generic netlink message from recvfrom buffer,"I am trying to get some events from kernel to User space via generic netlink family sockets. I have implemented the communication following this link and my user space callback is getting called. However I am getting segmentation fault when parsing the message. Instead of using nl_socket_modify_cb to setup the callback handler, I have used libev ev_io_init to setup a handler whenever it becomes ready to READ. In the sample code below I have omitted the error handling since, my callback function is getting called when kernel sends a multicast message. So everything seems to work till that point.",4-Low,Resolved,Jul-07-2021,"I followed the below link and able to parse the message although that example is not complete in terms of parsing multiple attributes but still some starting point.
+
+http://www.electronicsfaq.com/2014/02/generic-netlink-sockets-example-code.html
+
+Edit: Actually, we just need the pointer to struct genlmsghdr into the buf obtained from recv, once that is done, you can follow this link and use nla_parse to obtain all attributes in a single call.",,,,
+INC0027,LINUX_DEVICE_DRIVER,of_node_name_eq for device tree node label,"I am trying to read the label from my devices, but I keep reading pid@43c00000 instead of pid_0 when I use ->full_name on a struct device_node *. Is there a method to reading the label, or do I need to change the device tree entry of the node name to look something like pid0@43c00000 for pid_0.",3-Medium,Resolved,Jul-07-2021,"No, there is no ""method to reading the label"" from the struct device_node because labels are not saved in that data structure.
+From section 6.2 of the DeviceTree Specification, v0.4-rc1:
+
+Labels are only used in the devicetree source format and are not encoded into the DTB binary
+Your driver at runtime only has access to the DTB, so there are no labels.",,,,
+INC0028,LINUX_KERNEL,How can I stop emmc recovery?,"I have a prebuilt Linux kernel 4.19. I can't build a fresh one. I can mount an emmc partition read-only with no issue. I have trouble mounting partitions read and write. It reports ""running CQE recovery""
+
+I am thinking of killing the recovery function when it starts after I mount partition -o rw. I am suspecting the function is in core.c My idea would be to set the MMC_CQE_RECOVERY_TIMEOUT as a kernel command line parameter. But I don't know which parameter does that if it exists. Or I could run a function that stops the recovery. I could maybe create a binary that calls the function mmc_cqe_request_done(mmc, mrq) from cqhci-core.c but I don't have access to mmc, mrq parameters since im not making a kernel driver or maybe I can create the parameters somehow from a block device itself after booting the kernel and running mknod(). Which of these is possible?
+
+I am not trying to patch any kernel source I want to know if it's possible to stop running QCE recovery by creating a binary I can run or use a kernel parameter that can stop qce recovery.",3-Medium,Resolved,Jul-07-2021,"When I asked the question I had no idea device tree blobs could be modified. My goto solution was the impression I could run code in userspace to stop the recovery. I found a simpler solution. Which has nothing to do with writing code.
+
+The problem was I needed to stop the command queue and I had no idea how to do it and didn't know where it was being enabled in the first place.
+
+It turns out the device tree has mediatek,cqhci property which isn't supported well by the kernel. It seems my kernel sources probably had it enabled by patching their kernel sources since it wasn't available for mainline MEDIATEK mmc
+
+/dts-v1/;
+
+/ {
+    mmc@11230000 {
+        compatible = ""mediatek,mt6768-mmc"";
+        mediatek,cqhci;
+    };
+};
+So I had to modify the device tree file with fdtput.
+
+fdtput -d /path/to/fdt /mmc@11230000 ""mediatek,cqhci""
+Steps
+
+I dumped the device tree blob from the boot.img
+I Binwalked through the blob to get the pure flattened device tree
+Deleted the command queue enabler property from the blob with fdtput",,,,
+INC0029,Compilers,Linux Misc Device: general protection fault at misc_deregister() on driver with private data allocation,"I am writing a simple character driver in Linux for educational purposes of learning Linux kernel development. For this, I create a misc device and dynamically allocate its private data during my misc_init() and free them in misc_exit(). Even though the driver has no other code (yet), I get a general protection fault from the kernel when doing sudo rmmod sepehr.",3-Medium,Resolved,Jul-07-2021,"The this_device->driver_data member is used internally, so you shouldn't override it.",,,,
+INC0030,LINUX_KERNEL,Linux kernel issue when booting from U-Boot on Cortex-A15 CPU QEMU,"I am trying to run u-boot to boot Linux kernel on qemu vexpress-a15. The U-Boot and Linux kernel are configured to run on TI OMAP5, which has ARM Cortex A-15. So I have done some modification (uart, spi,i2c,..) and already booted the linux kernel from u-boot. The problem is that qemu didn't run as I expected. It doesn't show the usual first line ""Booting Linux on physical CPU 0x0"" (loglevel command line is already set to 8). Does the revision of arm cpu matter? I figured out that qemu created Cortex-A15 rev r4p0 with different to the cpu from my board Cortex-A15 rev r2p2.D30",3-Medium,Resolved,Jul-07-2021,"By appending kernel boot command line with ""log_buf_len=1M"",  will solve the problem. No more messages dropped.",,,,
+INC0031,LINUX_KERNEL,USB Keyboard not working after changing kernel config,"Using buildroot 2022.11 I have tinkered with the kernel config and now any USB Keyboard are not working. There is no event message, no kernel message when plugged in. Nothing happens. It worked previously with 'Microsoft Wireless Desktop 900' keyboard.
+
+On my device Radxa Zero SBC, ARM64 the keyboard is plugged in into one available USB 3.0, USB-C slot via USB-C to USB-A adapter.
+
+I think that some USB3 options are missing but I can't figure out which one. Full Kernel config",3-Medium,Resolved,Jul-07-2021,"The USB controllers are not enabled in the kernel configuration. The following options should be set to y or m:
+
+CONFIG_USB_DWC2
+   Device Drivers  --->
+   [*] USB support  --->
+       <*/m> DesignWare USB2 DRD Core Support
+CONFIG_USB_DWC3
+   Device Drivers  --->
+   [*] USB support  --->
+       <*/m> DesignWare USB3 DRD Core Support",,,,
